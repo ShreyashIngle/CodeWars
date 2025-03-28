@@ -73,7 +73,7 @@ function BookAppointment() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 onClick={() => handleDoctorSelect(doctor)}
-                className={`bg-white rounded-lg p-4 cursor-pointer transition-colors ${
+                className={`bg-black rounded-lg p-4 cursor-pointer transition-colors ${
                   selectedDoctor?._id === doctor._id
                     ? 'border-2 border-blue-500'
                     : 'hover:bg-gray-50'
@@ -103,7 +103,7 @@ function BookAppointment() {
 
         {/* Appointment Form */}
         <div className="lg:col-span-2">
-          <div className="bg-white rounded-lg shadow-lg p-6">
+          <div className="bg-black rounded-lg shadow-lg p-6">
             <h3 className="text-xl font-semibold mb-6">Appointment Details</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -170,7 +170,7 @@ function BookAppointment() {
               </div>
 
               {selectedDoctor && (
-                <div className="bg-gray-50 p-4 rounded-lg">
+                <div className="bg-black-50 p-4 rounded-lg">
                   <h4 className="font-medium mb-2">Selected Doctor</h4>
                   <p>Dr. {selectedDoctor.name}</p>
                   <p className="text-sm text-gray-600">

@@ -102,7 +102,7 @@ function AppointmentManager() {
             key={appointment._id}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="bg-white rounded-lg shadow-lg p-6"
+            className="bg-black rounded-lg shadow-lg p-6"
           >
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-semibold">

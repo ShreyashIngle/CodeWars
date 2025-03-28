@@ -43,7 +43,7 @@ function PatientDashboard() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-lg shadow-lg p-6"
+          className="bg-black rounded-lg shadow-lg p-6"
         >
           <h3 className="text-xl font-semibold mb-6">Upcoming Appointments</h3>
           <div className="space-y-4">
@@ -110,7 +110,7 @@ function PatientDashboard() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-white rounded-lg shadow-lg p-6"
+          className="bg-black rounded-lg shadow-lg p-6"
         >
           <h3 className="text-xl font-semibold mb-6">Recent Prescriptions</h3>
           <div className="space-y-4">
