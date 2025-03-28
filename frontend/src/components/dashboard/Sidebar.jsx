@@ -20,12 +20,20 @@ function Sidebar({ isOpen, setIsOpen }) {
     farmer: [
       { icon: BookOpen, label: 'DSA Sheet', path: '/dashboard/dsa-sheet' },
       { icon: Calendar, label: 'Placement Calendar', path: '/dashboard/placement-calendar' },
-      { icon: Clock, label: 'Sessions', path: '/dashboard/sessions' } 
+      { icon: Clock, label: 'Sessions', path: '/dashboard/sessions' } ,
+      { icon: Leaf, label: 'Book Appointment', path: '/dashboard/book-appointment' },
+      { icon: MessageSquare, label: 'Appointment Manager', path: '/dashboard/appointment-manager' },
+      { icon: Newspaper, label: 'Prescription Generator', path: '/dashboard/prescription-generator' },
+      {icon: Map, label: 'Patient Dashboard', path: '/dashboard/patient-dashboard'},
+    
     ],
     enterprise: [
       { icon: BookOpen, label: 'DSA Sheet', path: '/dashboard/dsa-sheet' },
       { icon: Calendar, label: 'Placement Calendar', path: '/dashboard/placement-calendar' },
-      { icon: Clock, label: 'Sessions', path: '/dashboard/sessions' } 
+      { icon: Clock, label: 'Sessions', path: '/dashboard/sessions' } ,
+      { icon: Leaf, label: 'Book Appointment', path: '/dashboard/book-appointment' },
+      { icon: MessageSquare, label: 'Appointment Manager', path: '/dashboard/appointment-manager' },
+      { icon: Newspaper, label: 'Prescription Generator', path: '/dashboard/prescription-generator' },
     ]
   };
 

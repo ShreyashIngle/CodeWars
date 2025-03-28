@@ -10,6 +10,11 @@ import Signup from '../pages/Signup';
 import Settings from '../pages/Settings';
 import Profile from '../pages/Profile';
 import ForgotPassword from '../pages/ForgotPassword';
+import DoctorDashboard from '../pages/dashboard/DoctorDashboard';
+import PatientDashboard from '../pages/dashboard/PatientDashboard';
+import BookAppointment from '../pages/dashboard/BookAppointment';
+import AppointmentManager from '../pages/dashboard/AppointmentManager';
+import PrescriptionGenerator from '../pages/dashboard/PrescriptionGenerator';
 import DsaSheet from '../pages/dashboard/DsaSheet';
 import Sessions from '../pages/dashboard/Sessions';
 import PlacementCalendar from '../pages/dashboard/PlacementCalendar';
@@ -22,9 +27,10 @@ const ProtectedRoute = ({ children, allowedRoles = ['farmer', 'enterprise'] }) =
     return <Navigate to="/login" replace />;
   }
 
-  if (!allowedRoles.includes(userRole)) {
-    return <Navigate to="/dashboard/dsa-sheet" replace />;
-  }
+  // if (!allowedRoles.includes(userRole || '')) {
+  //   return <Navigate to="/dashboard/dsa-sheet" replace />;
+  // }
+
 
   return children;
 };
@@ -46,6 +52,26 @@ export const router = createBrowserRouter([
           {
             path: 'dsa-sheet',
             element: <ProtectedRoute allowedRoles={['enterprise']}><DsaSheet /></ProtectedRoute>
+          },
+          {
+            path: 'doctor-dashboard',
+            element: <ProtectedRoute allowedRoles={['enterprise']}><DoctorDashboard /></ProtectedRoute>
+          },
+          {
+            path: 'patient-dashboard',
+            element: <ProtectedRoute allowedRoles={['farmer']}><PatientDashboard /></ProtectedRoute>
+          },
+          {
+            path:'book-appointment',
+            element: <ProtectedRoute allowedRoles={['farmer']}><BookAppointment /></ProtectedRoute>
+          },
+          {
+            path: 'appointment-manager',
+            element: <ProtectedRoute allowedRoles={['enterprise']}><AppointmentManager /></ProtectedRoute>
+          },
+          {
+            path: 'prescription-generator',
+            element: <ProtectedRoute allowedRoles={['enterprise']}><PrescriptionGenerator /></ProtectedRoute>
           },
           {
             path: 'sessions',
