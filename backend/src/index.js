@@ -4,13 +4,15 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import authRoutes from './routes/auth.js';
-import userRoutes from './routes/user.js';
-import dsaRoutes from './routes/dsa.js';
-import sessionRoutes from './routes/sessions.js';
-import companyRoutes from './routes/companies.js';
 import morgan from 'morgan';
 import multer from 'multer';
+
+// Import routes
+import authRoutes from './routes/auth.js';
+import userRoutes from './routes/user.js';
+import appointmentRoutes from './routes/appointments.js';
+import prescriptionRoutes from './routes/prescriptions.js';
+import doctorRoutes from './routes/doctors.js';
 
 dotenv.config();
 
@@ -67,9 +69,12 @@ app.use('/api/user', (req, res, next) => {
   req.upload = upload;
   next();
 }, userRoutes);
-app.use('/api/dsa', dsaRoutes);
-app.use('/api/sessions', sessionRoutes);
-app.use('/api/companies', companyRoutes);
+app.use('/api/appointments', appointmentRoutes);
+app.use('/api/prescriptions', prescriptionRoutes);
+app.use('/api/doctors', (req, res, next) => {
+  req.upload = upload;
+  next();
+}, doctorRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
