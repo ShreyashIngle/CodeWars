@@ -23,7 +23,7 @@ function Testimonials() {
         >
           <Quote
             size={48}
-            className="absolute -top-12 -left-12 text-green-500 opacity-50"
+            className="absolute -top-12 -left-12 text-blue-500 opacity-50"
           />
 
           <motion.p
@@ -37,7 +37,7 @@ function Testimonials() {
 
           <Quote
             size={48}
-            className="absolute -bottom-12 -right-12 text-green-500 opacity-50"
+            className="absolute -bottom-12 -right-12 text-blue-500 opacity-50"
           />
         </motion.div>
       </div>

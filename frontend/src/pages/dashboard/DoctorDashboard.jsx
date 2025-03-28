@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Calendar, Clock, Users, Activity, DollarSign } from 'lucide-react';
+import { Calendar, Clock, Activity, DollarSign } from 'lucide-react';
 import { Line, Bar } from 'react-chartjs-2';
 import axios from 'axios';
 import toast from 'react-hot-toast';
@@ -20,7 +20,7 @@ function DoctorDashboard() {
   });
 
   const [appointments, setAppointments] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [, setLoading] = useState(true);
 
   useEffect(() => {
     fetchDashboardData();
@@ -134,7 +134,7 @@ function DoctorDashboard() {
               <p className="text-gray-500">Total Revenue</p>
               <h3 className="text-2xl font-bold">₹{stats.revenue.total}</h3>
             </div>
-            <DollarSign className="w-8 h-8 text-green-500" />
+            <DollarSign className="w-8 h-8 text-blue-500" />
           </div>
         </motion.div>
       </div>
@@ -143,7 +143,16 @@ function DoctorDashboard() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
         <div className="bg-white p-6 rounded-lg shadow-lg">
           <h3 className="text-xl font-semibold mb-4">Appointment Trends</h3>
-          <Line data={appointmentChartData} options={{ responsive: true }} />
+          <Line
+            data={appointmentChartData}
+            options={{ responsive: true }}
+            redraw
+          />
+          <Bar
+            data={revenueChartData}
+            options={{ responsive: true }}
+            redraw
+          />
         </div>
 
         <div className="bg-white p-6 rounded-lg shadow-lg">
@@ -202,7 +211,7 @@ function DoctorDashboard() {
                     <span
                       className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
                         appointment.status === 'confirmed'
-                          ? 'bg-green-100 text-green-800'
+                          ? 'bg-blue-100 text-blue-800'
                           : appointment.status === 'pending'
                           ? 'bg-yellow-100 text-yellow-800'
                           : 'bg-red-100 text-red-800'
@@ -220,5 +229,6 @@ function DoctorDashboard() {
     </div>
   );
 }
+
 
 export default DoctorDashboard;

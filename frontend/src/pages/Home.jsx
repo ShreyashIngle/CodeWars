@@ -8,9 +8,9 @@ import CallToAction from '../components/home/CallToAction';
 import InfiniteScroller from '../components/shared/InfiniteScroller';
 
 const scrollItems = [
-  'PLACEMENT CALENDAR',
-  'DSA SHEET',
-  'SESSIONS',
+  'APPOINTMENTS',
+  'PATIENT RECORDS',
+  'DOCTOR SCHEDULES',
 ];
 
 function Home() {

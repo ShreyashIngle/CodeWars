@@ -65,7 +65,7 @@ function PatientDashboard() {
                     <span
                       className={`px-2 py-1 rounded-full text-xs font-medium ${
                         appointment.status === 'confirmed'
-                          ? 'bg-green-100 text-green-800'
+                          ? 'bg-blue-100 text-blue-800'
                           : appointment.type === 'emergency'
                           ? 'bg-red-100 text-red-800'
                           : 'bg-yellow-100 text-yellow-800'
@@ -117,7 +117,7 @@ function PatientDashboard() {
             {prescriptions.map((prescription) => (
               <div
                 key={prescription._id}
-                className="border rounded-lg p-4 hover:border-green-500 transition-colors"
+                className="border rounded-lg p-4 hover:border-blue-500 transition-colors"
               >
                 <div className="flex items-center justify-between mb-4">
                   <div>
